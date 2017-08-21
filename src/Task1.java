@@ -27,6 +27,8 @@ public class Task1 {
 
     public synchronized void incrementCounter(){
         counter++;
+        System.out.println(counter);
+
     }
 
     private class TaskFirstNumber implements Runnable{
@@ -41,12 +43,13 @@ public class Task1 {
             for(int i = 2; i < number; i++){
                 if(number % i == 0 ){
                     increment = false;
+                    break;
                 }
             }
             if(increment){
                 incrementCounter();
             }
-            System.out.println(counter);
+
         }
     }
 }
