@@ -9,7 +9,16 @@ public class Main {
         new Thread(new NumberTask(1001, 10000)).start();
         new Thread(new NumberTask(100000, 100000000)).start();
 
+        new  Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Nie spijcie!");
+            }
+        }).start();
+
     }
+
+
 
     private static class NumberTask implements Runnable{
 
